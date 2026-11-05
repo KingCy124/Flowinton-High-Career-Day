@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowinton High School - Career Day: Software Engineering</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        },
+                        dark: {
+                            bg: '#0b0f19',
+                            card: '#111827',
+                            border: '#1f2937'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.4);
+        }
+        .glow-effect-hover:hover {
+            box-shadow: 0 0 30px 2px rgba(99, 102, 241, 0.6);
+        }
+        .code-bg {
+            background-image: radial-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-gray-200 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-dark-bg/80 border-b border-gray-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-400 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-brand-500/30">
+                    F
+                </div>
+                <div>
+                    <span class="font-bold text-lg text-white block leading-tight">Flowinton High</span>
+                    <span class="text-xs text-brand-400 font-mono font-medium">CAREER DAY 2026</span>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-brand-400 transition-colors">What is SE?</a>
+                <a href="#pathways" class="hover:text-brand-400 transition-colors">Pathways</a>
+                <a href="#playground" class="hover:text-brand-400 transition-colors">Try Coding</a>
+                <a href="#roadmap" class="hover:text-brand-400 transition-colors">Roadmap</a>
+                <a href="#quiz" class="hover:text-brand-400 transition-colors">Quiz</a>
+            </nav>
+
+            <a href="#playground" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-500 rounded-lg transition-all shadow-md hover:shadow-brand-500/20">
+                Start Coding <i class="fa-solid fa-terminal ml-2"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 code-bg">
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-600/10 via-transparent to-dark-bg pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-xs font-mono font-medium mb-6">
+                    <span class="flex h-2 w-2 rounded-full bg-brand-400 animate-ping"></span>
+                    Interactive Presentation • Career Day
+                </div>
+                
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                    Build the Future with <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-indigo-300 to-purple-400">Software Engineering</span>
+                </h1>
+                
+                <p class="mt-6 text-lg sm:text-xl text-gray-400 leading-relaxed">
+                    Welcome Flowinton Tigers! Discover how code powers the apps, games, AI, and technology shaping our modern world—and how <span class="text-white font-semibold">you</span> can start today.
+                </p>
+
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#playground" class="px-8 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold transition-all shadow-lg glow-effect flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-code"></i> Launch Interactive Sandbox
+                    </a>
+                    <a href="#pathways" class="px-8 py-3.5 rounded-xl bg-dark-card hover:bg-gray-800 border border-gray-700 text-gray-200 font-semibold transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-compass"></i> Explore Career Paths
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Code Banner Deck -->
+            <div class="mt-14 max-w-4xl mx-auto rounded-2xl bg-dark-card border border-gray-800 shadow-2xl overflow-hidden">
+                <div class="bg-gray-900/90 px-4 py-3 border-b border-gray-800 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
+                        <span class="ml-2 text-xs font-mono text-gray-400">flowinton_high_career_day.js</span>
+                    </div>
+                    <span class="text-xs font-mono text-gray-500">UTF-8</span>
+                </div>
+                <div class="p-6 font-mono text-xs sm:text-sm text-gray-300 leading-relaxed overflow-x-auto">
+                    <p><span class="text-purple-400">const</span> <span class="text-yellow-300">student</span> = {</p>
+                    <p class="pl-4"><span class="text-blue-400">school</span>: <span class="text-green-400">'Flowinton High School'</span>,</p>
+                    <p class="pl-4"><span class="text-blue-400">curiosity</span>: <span class="text-indigo-300">Infinity</span>,</p>
+                    <p class="pl-4"><span class="text-blue-400">superpower</span>: <span class="text-green-400">'Solving Real-World Problems with Code'</span></p>
+                    <p>};</p>
+                    <br>
+                    <p><span class="text-purple-400">function</span> <span class="text-blue-300">buildFuture</span>(<span class="text-yellow-300">student</span>) {</p>
+                    <p class="pl-4"><span class="text-purple-400">return</span> <span class="text-green-400">`Welcome ${student.school}! Your software engineering journey starts today!`</span>;</p>
+                    <p>}</p>
+                    <br>
+                    <p><span class="text-gray-500">// Output:</span></p>
+                    <p class="text-brand-400 font-semibold">> buildFuture(student);</p>
+                    <p class="text-green-300">"Welcome Flowinton High School! Your software engineering journey starts today!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Software Engineering? -->
+    <section id="about" class="py-16 bg-gray-900/50 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-extrabold text-white">What is Software Engineering?</h2>
+                <p class="mt-3 text-gray-400">It's more than just typing syntax—it's creative digital architecture.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-dark-card p-6 rounded-2xl border border-gray-800 hover:border-brand-500/50 transition-all">
+                    <div class="w-12 h-12 bg-brand-500/10 rounded-xl flex items-center justify-center text-brand-400 mb-5 text-xl">
+                        <i class="fa-solid fa-puzzle-piece"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Problem Solving</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Software engineers take complex human problems and break them down into step-by-step logical instructions that computers can execute instantly.
+                    </p>
+                </div>
+
+                <div class="bg-dark-card p-6 rounded-2xl border border-gray-800 hover:border-brand-500/50 transition-all">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-400 mb-5 text-xl">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Creative Building</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Like digital LEGOs, engineers use programming languages to create interactive video games, streaming platforms, space flight controls, and medical software.
+                    </p>
+                </div>
+
+                <div class="bg-dark-card p-6 rounded-2xl border border-gray-800 hover:border-brand-500/50 transition-all">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 mb-5 text-xl">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Global Collaboration</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Software development is a team sport. Engineers work with designers, product managers, and researchers around the world to bring ideas to life.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Pathways -->
+    <section id="pathways" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-400 font-mono text-sm font-semibold uppercase tracking-wider">Diverse Career Options</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Find Your Engineering Pathway</h2>
+                <p class="mt-3 text-gray-400">Software engineering has many different specialties. Click on a role to learn what makes it unique!</p>
+            </div>
+
+            <!-- Pathway Cards Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Frontend -->
+                <div class="bg-dark-card rounded-2xl border border-gray-800 p-6 flex flex-col justify-between hover:border-indigo-500 transition-all duration-300 group hover:-translate-y-1">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-mono font-medium">User Experience</span>
+                            <i class="fa-solid fa-desktop text-2xl text-indigo-400 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Frontend Developer</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Builds everything users see, click, and interact with on websites and web applications.
+                        </p>
+                    </div>
+                    <div class="border-t border-gray-800/80 pt-4 mt-2">
+                        <div class="text-xs font-mono text-gray-400"><span class="text-brand-400">Tech Stack:</span> HTML, CSS, JavaScript, React</div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="bg-dark-card rounded-2xl border border-gray-800 p-6 flex flex-col justify-between hover:border-emerald-500 transition-all duration-300 group hover:-translate-y-1">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-mono font-medium">Logic & Data</span>
+                            <i class="fa-solid fa-server text-2xl text-emerald-400 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Backend Developer</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Powers the invisible engine behind apps: server databases, user accounts, security, and algorithms.
+                        </p>
+                    </div>
+                    <div class="border-t border-gray-800/80 pt-4 mt-2">
+                        <div class="text-xs font-mono text-gray-400"><span class="text-brand-400">Tech Stack:</span> Python, Node.js, SQL, Java</div>
+                    </div>
+                </div>
+
+                <!-- Mobile -->
+                <div class="bg-dark-card rounded-2xl border border-gray-800 p-6 flex flex-col justify-between hover:border-purple-500 transition-all duration-300 group hover:-translate-y-1">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-mono font-medium">Mobile Apps</span>
+                            <i class="fa-solid fa-mobile-screen-button text-2xl text-purple-400 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Mobile App Developer</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Creates mobile software for iPhones and Androids, like TikTok, Instagram, or Spotify.
+                        </p>
+                    </div>
+                    <div class="border-t border-gray-800/80 pt-4 mt-2">
+                        <div class="text-xs font-mono text-gray-400"><span class="text-brand-400">Tech Stack:</span> Swift, Kotlin, React Native</div>
+                    </div>
+                </div>
+
+                <!-- AI / Machine Learning -->
+                <div class="bg-dark-card rounded-2xl border border-gray-800 p-6 flex flex-col justify-between hover:border-amber-500 transition-all duration-300 group hover:-translate-y-1">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-mono font-medium">Smart Systems</span>
+                            <i class="fa-solid fa-brain text-2xl text-amber-400 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">AI / ML Engineer</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Trains intelligent algorithms to recognize speech, drive autonomous cars, and generate content.
+                        </p>
+                    </div>
+                    <div class="border-t border-gray-800/80 pt-4 mt-2">
+                        <div class="text-xs font-mono text-gray-400"><span class="text-brand-400">Tech Stack:</span> Python, PyTorch, TensorFlow</div>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity -->
+                <div class="bg-dark-card rounded-2xl border border-gray-800 p-6 flex flex-col justify-between hover:border-red-500 transition-all duration-300 group hover:-translate-y-1">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-xs font-mono font-medium">Security</span>
+                            <i class="fa-solid fa-shield-halved text-2xl text-red-400 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Cybersecurity Engineer</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Defends networks, applications, and user privacy against cyber attacks and hackers.
+                        </p>
+                    </div>
+                    <div class="border-t border-gray-800/80 pt-4 mt-2">
+                        <div class="text-xs font-mono text-gray-400"><span class="text-brand-400">Tech Stack:</span> Cryptography, Linux, Python</div>
+                    </div>
+                </div>
+
+                <!-- DevOps / Cloud -->
+                <div class="bg-dark-card rounded-2xl border border-gray-800 p-6 flex flex-col justify-between hover:border-cyan-500 transition-all duration-300 group hover:-translate-y-1">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-mono font-medium">Infrastructure</span>
+                            <i class="fa-solid fa-cloud text-2xl text-cyan-400 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">DevOps / Cloud Engineer</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Manages cloud infrastructure so software runs smoothly for millions of users without crashing.
+                        </p>
+                    </div>
+                    <div class="border-t border-gray-800/80 pt-4 mt-2">
+                        <div class="text-xs font-mono text-gray-400"><span class="text-brand-400">Tech Stack:</span> AWS, Docker, Kubernetes, Bash</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Live Code Sandbox -->
+    <section id="playground" class="py-20 bg-gray-900/60 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-400 font-mono text-sm font-semibold uppercase tracking-wider">Hands-on Practice</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Interactive Code Simulator</h2>
+                <p class="mt-3 text-gray-400">Try running real JavaScript code right now! Select a template or write custom code to test your ideas live.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+                <!-- Code Editor Column -->
+                <div class="bg-dark-card rounded-2xl border border-gray-800 overflow-hidden flex flex-col">
+                    <div class="bg-gray-900 px-4 py-3 border-b border-gray-800 flex flex-wrap items-center justify-between gap-2">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-code text-brand-400"></i>
+                            <span class="text-sm font-mono font-medium text-gray-300">Code Editor</span>
+                        </div>
+                        
+                        <!-- Sample Loader -->
+                        <div class="flex items-center space-x-2">
+                            <span class="text-xs text-gray-400">Presets:</span>
+                            <button onclick="loadSample('greeting')" class="text-xs bg-gray-800 hover:bg-brand-600/30 hover:text-brand-300 text-gray-300 px-2.5 py-1 rounded transition">Greeting</button>
+                            <button onclick="loadSample('theme')" class="text-xs bg-gray-800 hover:bg-brand-600/30 hover:text-brand-300 text-gray-300 px-2.5 py-1 rounded transition">Color Glow</button>
+                            <button onclick="loadSample('counter')" class="text-xs bg-gray-800 hover:bg-brand-600/30 hover:text-brand-300 text-gray-300 px-2.5 py-1 rounded transition">Logic Loop</button>
+                        </div>
+                    </div>
+
+                    <div class="p-4 flex-1 flex flex-col">
+                        <textarea id="code-input" class="w-full flex-1 min-h-[260px] bg-dark-bg text-brand-100 font-mono text-sm p-4 rounded-xl border border-gray-800 focus:outline-none focus:border-brand-500 resize-none" spellcheck="false">// Try changing the student name or school message below!
+let studentName = "Flowinton High Student";
+let schoolName = "Flowinton High School";
+
+setOutput("Hello " + studentName + "! Welcome to " + schoolName + " Career Day 🚀");
+setGlow("#6366f1");</textarea>
+
+                        <div class="mt-4 flex items-center justify-between">
+                            <button onclick="runCode()" class="px-6 py-2.5 rounded-lg bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm transition flex items-center gap-2 shadow-lg glow-effect">
+                                <i class="fa-solid fa-play text-xs"></i> Run Code
+                            </button>
+                            <button onclick="resetEditor()" class="text-xs text-gray-400 hover:text-white transition">
+                                <i class="fa-solid fa-rotate-left mr-1"></i> Reset Editor
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview / Terminal Output -->
+                <div id="output-box" class="bg-dark-card rounded-2xl border border-gray-800 p-6 flex flex-col justify-between relative transition-all duration-500">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-gray-800/80 pb-3 mb-4">
+                            <div class="flex items-center space-x-2">
+                                <i class="fa-solid fa-terminal text-green-400"></i>
+                                <span class="text-sm font-mono font-medium text-gray-300">Live Result Box</span>
+                            </div>
+                            <span class="text-xs font-mono text-green-400 flex items-center gap-1">
+                                <span class="w-2 h-2 rounded-full bg-green-400 inline-block animate-pulse"></span> Ready
+                            </span>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-xs font-mono text-gray-400 uppercase tracking-wider block mb-1">Dynamic Output Display:</label>
+                                <div id="display-output" class="min-h-[100px] p-4 rounded-xl bg-dark-bg border border-gray-800 font-mono text-sm text-green-400 break-words flex items-center">
+                                    Click "Run Code" to execute!
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="text-xs font-mono text-gray-400 uppercase tracking-wider block mb-1">Interactive Counter Visualizer:</label>
+                                <div id="counter-display" class="p-4 rounded-xl bg-dark-bg border border-gray-800 font-mono text-2xl font-bold text-brand-400 text-center">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-gray-800 text-xs text-gray-400 flex items-center justify-between">
+                        <span><i class="fa-solid fa-info-circle mr-1"></i> Use <code>setOutput("message")</code> and <code>setGlow("#hex")</code></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Roadmap -->
+    <section id="roadmap" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Essential Skills -->
+                <div>
+                    <span class="text-brand-400 font-mono text-sm font-semibold uppercase tracking-wider">How to Succeed</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-2 mb-6">Essential Skills for Engineers</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-dark-card border border-gray-800">
+                            <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 text-lg">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Logic & Analytical Thinking</h4>
+                                <p class="text-sm text-gray-400 mt-0.5">Ability to think step-by-step and predict how different components interact.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-dark-card border border-gray-800">
+                            <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center shrink-0 text-lg">
+                                <i class="fa-solid fa-arrows-rotate"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Persistence & Resilience</h4>
+                                <p class="text-sm text-gray-400 mt-0.5">Debugging code requires patience! Finding errors is a normal part of building software.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-dark-card border border-gray-800">
+                            <div class="w-10 h-10 rounded-lg bg-green-500/10 text-green-400 flex items-center justify-center shrink-0 text-lg">
+                                <i class="fa-solid fa-comments"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Teamwork & Communication</h4>
+                                <p class="text-sm text-gray-400 mt-0.5">Explaining ideas clearly and collaborating with classmates and teammates.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student Roadmap -->
+                <div class="bg-dark-card p-8 rounded-2xl border border-gray-800">
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-route text-brand-400"></i> High School Action Plan
+                    </h3>
+
+                    <div class="relative border-l-2 border-brand-500/30 pl-6 space-y-8">
+                        
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-brand-500 border-4 border-dark-card"></span>
+                            <h4 class="font-bold text-white">1. Start with Free Resources</h4>
+                            <p class="text-sm text-gray-400 mt-1">Explore free interactive platforms like Scratch, freeCodeCamp, Khan Academy, and Codecademy.</p>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-brand-500 border-4 border-dark-card"></span>
+                            <h4 class="font-bold text-white">2. Join Flowinton Tech Clubs</h4>
+                            <p class="text-sm text-gray-400 mt-1">Participate in robotics teams, computer science clubs, or math competitions at school.</p>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-brand-500 border-4 border-dark-card"></span>
+                            <h4 class="font-bold text-white">3. Build Personal Projects</h4>
+                            <p class="text-sm text-gray-400 mt-1">Create a personal portfolio website, build a simple calculator, or code a text-based game.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="py-20 bg-gray-900/50 border-t border-gray-800">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-brand-400 font-mono text-sm font-semibold uppercase tracking-wider">Test Your Knowledge</span>
+                <h2 class="text-3xl font-extrabold text-white mt-2">Career Day Quick Quiz</h2>
+                <p class="mt-2 text-gray-400 text-sm">Let's see what you learned during today's presentation!</p>
+            </div>
+
+            <div class="bg-dark-card p-6 sm:p-8 rounded-2xl border border-gray-800 shadow-xl" id="quiz-container">
+                <div id="quiz-screen">
+                    <div class="flex items-center justify-between mb-6">
+                        <span id="question-count" class="text-xs font-mono text-brand-400 font-semibold uppercase">Question 1 of 3</span>
+                        <span id="score-badge" class="text-xs font-mono bg-gray-800 text-gray-300 px-3 py-1 rounded-full">Score: 0</span>
+                    </div>
+
+                    <h3 id="question-text" class="text-lg sm:text-xl font-bold text-white mb-6">Loading question...</h3>
+
+                    <div id="options-container" class="space-y-3">
+                        <!-- Quiz options dynamically injected -->
+                    </div>
+
+                    <div class="mt-6 text-right">
+                        <button id="next-btn" onclick="nextQuestion()" class="hidden px-6 py-2.5 rounded-lg bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm transition">
+                            Next Question <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="result-screen" class="hidden text-center py-8">
+                    <div class="w-16 h-16 bg-brand-500/20 text-brand-400 rounded-full flex items-center justify-center mx-auto text-3xl mb-4">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Quiz Completed!</h3>
+                    <p id="final-score-text" class="text-gray-300 text-lg mb-6">You scored 3 / 3!</p>
+                    <button onclick="restartQuiz()" class="px-6 py-2.5 rounded-lg bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm transition inline-flex items-center gap-2">
+                        <i class="fa-solid fa-rotate-right"></i> Try Again
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-bg border-t border-gray-800/80 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
+            <p>© 2026 Flowinton High School Career Day. All rights reserved.</p>
+            <p class="mt-2 text-xs text-gray-600">Designed for Future Software Engineers • Go Tigers! 🐅</p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // --- Live Editor Functionality ---
+        function setOutput(msg) {
+            document.getElementById('display-output').innerText = msg;
+        }
+
+        function setGlow(colorHex) {
+            const box = document.getElementById('output-box');
+            box.style.boxShadow = `0 0 35px -5px ${colorHex}`;
+        }
+
+        function runCode() {
+            const code = document.getElementById('code-input').value;
+            try {
+                // Safe basic evaluation for sandbox context
+                const fn = new Function('setOutput', 'setGlow', code);
+                fn(setOutput, setGlow);
+            } catch (err) {
+                setOutput("⚠️ Code Error: " + err.message);
+                setGlow("#ef4444");
+            }
+        }
+
+        function loadSample(type) {
+            const editor = document.getElementById('code-input');
+            const counterBox = document.getElementById('counter-display');
+            
+            if (type === 'greeting') {
+                editor.value = `// Custom Welcome Message\nlet name = "Flowinton Student";\nsetOutput("Welcome to Career Day, " + name + "! 💻");\nsetGlow("#6366f1");`;
+            } else if (type === 'theme') {
+                editor.value = `// Change UI Glow dynamic color\nsetOutput("Visualizing Neon Emerald Theme!");\nsetGlow("#10b981");`;
+            } else if (type === 'counter') {
+                editor.value = `// Loop simulation\nlet count = 0;\nfor(let i = 1; i <= 10; i++) {\n  count += i;\n}\ndocument.getElementById('counter-display').innerText = count;\nsetOutput("Sum of numbers 1 to 10 calculated!");\nsetGlow("#f59e0b");`;
+            }
+            runCode();
+        }
+
+        function resetEditor() {
+            document.getElementById('code-input').value = `// Try changing the student name or school message below!\nlet studentName = "Flowinton High Student";\nlet schoolName = "Flowinton High School";\n\nsetOutput("Hello " + studentName + "! Welcome to " + schoolName + " Career Day 🚀");\nsetGlow("#6366f1");`;
+            document.getElementById('counter-display').innerText = '0';
+            runCode();
+        }
+
+        // --- Interactive Quiz Logic ---
+        const quizQuestions = [
+            {
+                question: "Which role is primarily focused on designing what users see and interact with on a website?",
+                options: ["Backend Developer", "Frontend Developer", "DevOps Engineer", "Database Administrator"],
+                answer: 1
+            },
+            {
+                question: "What is a primary skill needed in software engineering?",
+                options: ["Memorizing every key on the keyboard", "Problem-solving & logic", "Working completely alone", "Ignoring errors"],
+                answer: 1
+            },
+            {
+                question: "Which language is commonly used for both Web development and Machine Learning?",
+                options: ["HTML", "Python", "CSS", "SQL"],
+                answer: 1
+            }
+        ];
+
+        let currentQ = 0;
+        let score = 0;
+
+        function loadQuizQuestion() {
+            const q = quizQuestions[currentQ];
+            document.getElementById('question-count').innerText = `Question ${currentQ + 1} of ${quizQuestions.length}`;
+            document.getElementById('question-text').innerText = q.question;
+            document.getElementById('next-btn').classList.add('hidden');
+
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-xl bg-dark-bg border border-gray-800 hover:border-brand-500 hover:bg-gray-800/60 text-sm font-medium text-gray-200 transition flex items-center justify-between";
+                btn.innerHTML = `<span>${opt}</span> <i class="fa-regular fa-circle text-gray-500"></i>`;
+                btn.onclick = () => selectOption(idx, btn);
+                container.appendChild(btn);
+            });
+        }
+
+        function selectOption(selectedIdx, btnElement) {
+            const q = quizQuestions[currentQ];
+            const allButtons = document.getElementById('options-container').children;
+
+            // Disable all buttons after choice
+            for (let b of allButtons) {
+                b.disabled = true;
+                b.classList.add('cursor-not-allowed');
+            }
+
+            if (selectedIdx === q.answer) {
+                btnElement.classList.add('border-green-500', 'bg-green-500/10', 'text-green-300');
+                btnElement.querySelector('i').className = "fa-solid fa-circle-check text-green-400";
+                score++;
+                document.getElementById('score-badge').innerText = `Score: ${score}`;
+            } else {
+                btnElement.classList.add('border-red-500', 'bg-red-500/10', 'text-red-300');
+                btnElement.querySelector('i').className = "fa-solid fa-circle-xmark text-red-400";
+
+                // Highlight correct answer
+                const correctBtn = allButtons[q.answer];
+                correctBtn.classList.add('border-green-500', 'bg-green-500/10', 'text-green-300');
+            }
+
+            document.getElementById('next-btn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQ++;
+            if (currentQ < quizQuestions.length) {
+                loadQuizQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+
+        function showQuizResults() {
+            document.getElementById('quiz-screen').classList.add('hidden');
+            document.getElementById('result-screen').classList.remove('hidden');
+            document.getElementById('final-score-text').innerText = `You scored ${score} out of ${quizQuestions.length}!`;
+        }
+
+        function restartQuiz() {
+            currentQ = 0;
+            score = 0;
+            document.getElementById('score-badge').innerText = 'Score: 0';
+            document.getElementById('result-screen').classList.add('hidden');
+            document.getElementById('quiz-screen').classList.remove('hidden');
+            loadQuizQuestion();
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            loadQuizQuestion();
+            runCode();
+        };
+    </script>
+</body>
+</html>
